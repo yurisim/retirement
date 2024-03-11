@@ -28,10 +28,10 @@ jobs:
           node-version: 20
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
+      - run: yarn playwright install
       - name: Install Playwright Browsers
-        run: yarn playwright install   
+        run: npx playwright install --with-deps
       - uses: nrwl/nx-set-shas@v4
-
       - run: yarn nx affected -t lint test build e2e-ci
       - uses: actions/upload-artifact@v4
         if: always()
