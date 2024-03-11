@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'retirement-event',
+  selector: 'retirement-events',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './event.component.html',
-  styleUrl: './event.component.scss',
+  templateUrl: './events.component.html',
+  styleUrl: './events.component.scss',
 })
-export class EventComponent {}
+export class EventsComponent {}

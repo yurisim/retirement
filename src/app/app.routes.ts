@@ -4,6 +4,5 @@ export const appRoutes: Route[] = [
     // routes for home component
     { path: '', loadComponent: () => import('./home/home.component').then(c => c.HomeComponent) },
     { path: 'bios', loadComponent: () => import('./bios/bios.component').then(c => c.BiosComponent) },
-    { path: 'event', loadComponent: () => import('./event/event.component').then(c => c.EventComponent) },
     { path: 'photos', loadComponent: () => import('./photos/photos.component').then(c => c.PhotosComponent) },
 ];
