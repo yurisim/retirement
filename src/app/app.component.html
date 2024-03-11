@@ -1,21 +1,27 @@
 <header
-  class="fixed top-0 left-0 w-full p-4 md:p-10 flex justify-between items-center"
+  class="relative top-0 left-0 w-full p-4 md:p-10 flex justify-between items-center"
 >
   <button
     mat-button
     color="primary"
-    class="font-bold uppercase text-lg md:text-xl h-full whitespace-normal text-nowrap"
+    class="font-bold uppercase text-xl h-full whitespace-normal text-nowrap"
     routerLink="/"
   >
     CMSgt Tracy L. Massey
   </button>
 
-  <div class="flex justify-center items-center space-x-3 md:space-x-5">
+  <!-- Button group visible on md screens and larger -->
+  <div class="justify-center items-center md:space-x-3 hidden md:flex">
     <button mat-button color="primary" routerLink="/bios">
       <mat-icon class="hidden md:inline-flex">person_book</mat-icon>
       Bios
     </button>
-    <button mat-button color="primary" class="text-nowrap" routerLink="/events">
+    <button
+      mat-button
+      color="primary"
+      class="text-nowrap"
+      (click)="openEventsSheet()"
+    >
       <mat-icon class="hidden md:inline-flex">schedule</mat-icon>
       Event Sequence
     </button>
@@ -24,5 +30,32 @@
       Photos
     </button>
   </div>
+
+  <!-- Menu button visible on small screens -->
+  <div class="md:hidden flex justify-center items-center">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="More options"
+    >
+      <mat-icon color="primary">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/bios">
+        <mat-icon color="primary">person_book</mat-icon>
+        <span>Bios</span>
+      </button>
+      <button mat-menu-item (click)="openEventsSheet()">
+        <mat-icon color="primary">schedule</mat-icon>
+        <span>Event Sequence</span>
+      </button>
+      <button mat-menu-item routerLink="/photos">
+        <mat-icon color="primary">photo_camera</mat-icon>
+        <span>Photos</span>
+      </button>
+    </mat-menu>
+  </div>
 </header>
-<router-outlet></router-outlet>
+<section>
+  <router-outlet></router-outlet>
+</section>
