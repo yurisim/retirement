@@ -12,11 +12,11 @@ import { MatCardModule } from '@angular/material/card';
 export class BiosComponent {
   personData = [
     {
-      image: "assets/images/abm-senior.png",
+      images: ["assets/images/abm-senior.png"],
       name: "Colonel Kenneth J. Voigt, Jr.",
       bio: [
-        "Col. Kenneth J. Voigt, Jr., is the Commander, 552nd Air Control Wing, Tinker Air Force Base, Oklahoma. He is responsible for Air Combat Command's fleet of E-3 Airborne Warning & Control System aircraft and ground-based Control & Reporting Centers supporting combatant commanders worldwide. He leads over 4,360 men and women at four Air Force bases and manages resources that includes the E-3 AWACS aircraft and CRCs valued at $16.1 billion.",
-        "Colonel Voigt also oversees Air Combat Command’s largest Programmed Flying Training Unit and its non-aircraft specific functional training. He entered the Air Force in 1999 through the Reserve Officer Training Corps at Norwich University, Vermont. He is a Senior Air Battle Manager with operational combat experience in CRCs, AWACS, and Air Operations Centers. He has served on the staffs of Headquarters United States Air Force and United States Indo-Pacific Command. Finally, Voigt commanded the 505th Test Squadron, Nellis AFB, Nevada, and the 552nd Air Control Group, Tinker AFB, Oklahoma.",
+        "Colonel Kenneth J. Voigt, Jr., is the Commander, 552nd Air Control Wing, Tinker Air Force Base, Oklahoma. He is responsible for Air Combat Command's fleet of E-3 Airborne Warning & Control System aircraft and ground-based Control & Reporting Centers supporting combatant commanders worldwide. He leads over 4,360 men and women at four Air Force bases and manages resources that includes the E-3 AWACS aircraft and CRCs valued at $16.1 billion.",
+        "Col Voigt also oversees Air Combat Command’s largest Programmed Flying Training Unit and its non-aircraft specific functional training. He entered the Air Force in 1999 through the Reserve Officer Training Corps at Norwich University, Vermont. He is a Senior Air Battle Manager with operational combat experience in CRCs, AWACS, and Air Operations Centers. He has served on the staffs of Headquarters United States Air Force and United States Indo-Pacific Command. Finally, Col Voigt commanded the 505th Test Squadron, Nellis AFB, Nevada, and the 552nd Air Control Group, Tinker AFB, Oklahoma.",
         "Colonel Voigt has participated in Operations INHERENT RESOLVE, SPARTAN SHIELD, FREEDOM SENTINEL, ENDURING FREEDOM, IRAQI FREEDOM, SOUTHERN WATCH, the Resolute Support mission, and counter drug operation."],
       operations: [
         "INHERENT RESOLVE",
@@ -47,6 +47,7 @@ export class BiosComponent {
       ]
     },
     {
+      images: ["assets/images/c2.png", "assets/images/wdir.png"],
       name: "CMSgt Tracy L. Massey",
       bio: [
         "Chief Master Sergeant Tracy Massey is the 552d Air Control Group Superintendent, Tinker AFB, Oklahoma. She is the Senior Enlisted Advisor, to the Commander for over 900 Airmen, comprised of diverse Air Force Specialty Codes at four local and Geographically Separated Units. She provides operations, maintenance, logistics and training support to two combat-coded Air Control Squadrons, one Air Control Networks Squadron and one Operations Support Squadron, effectively ensuring Command and Control Battle Management Operations to Combatant Commanders worldwide.",
