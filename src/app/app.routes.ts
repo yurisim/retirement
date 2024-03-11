@@ -1,8 +1,9 @@
 import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
-    // routes for home
-    // { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+    // routes for home component
+    { path: '', loadComponent: () => import('./home/home.component').then(c => c.HomeComponent) },
+
     // // routes for bios
     // { path: 'bio', loadChildren: () => import('./bio/bio.module').then(m => m.BioModule) },
     // // routes for events
