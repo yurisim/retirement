@@ -1,5 +1,5 @@
 <header
-  class="fixed top-0 left-0 w-full p-4 md:p-10 flex justify-between items-center"
+  class="relative top-0 left-0 w-full p-4 md:p-10 flex justify-between items-center"
 >
   <button
     mat-button
@@ -29,25 +29,25 @@
   <!-- Menu button visible on small screens -->
   <div class="md:hidden flex justify-center items-center">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="More options">
-      <mat-icon>more_vert</mat-icon>
+      <mat-icon color="primary">more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink="/bios">
-        <mat-icon>person_book</mat-icon>
+        <mat-icon color="primary">person_book</mat-icon>
         <span>Bios</span>
       </button>
       <button mat-menu-item routerLink="/event">
-        <mat-icon>schedule</mat-icon>
+        <mat-icon color="primary">schedule</mat-icon>
         <span>Event Sequence</span>
       </button>
       <button mat-menu-item routerLink="/photos">
-        <mat-icon>photo_camera</mat-icon>
+        <mat-icon color="primary">photo_camera</mat-icon>
         <span>Photos</span>
       </button>
     </mat-menu>
   </div>
   
 </header>
-<section class="pt-20 md:pt-28">
+<section>
   <router-outlet></router-outlet>
 </section>

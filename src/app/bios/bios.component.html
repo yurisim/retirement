@@ -1,60 +1,65 @@
-<div class="m-5 flex flex-col md:flex-row">
-  <mat-card *ngFor="let person of personData" class="w-full m-3 h-fit">
+<div class="flex flex-col md:flex-row m-5 md:space-x-5">
+  <mat-card *ngFor="let person of personData" class="w-full md:w-auto h-fit">
     <mat-card-header class="flex justify-center items-center">
       <mat-card-title>{{ person.name }}</mat-card-title>
     </mat-card-header>
-    <mat-card-content class="flex flex-col justify-center">
+    <mat-card-content class="flex flex-col justify-center items-center">
       <img
         *ngIf="person.image"
         [src]="person.image"
         class="w-1/2 mx-auto mt-3 mb-4"
       />
-
-      <p *ngFor="let line of person.bio">
+      <p *ngFor="let line of person.bio" class="w-full text-left">
         {{ line }}
       </p>
-
-      <div *ngIf="person.operations">
+      <div *ngIf="person.operations" class="w-full text-center md:text-left">
         <div class="capitalize font-bold">Operations</div>
-        <ul>
+        <ul class="list-disc list-inside">
           <li *ngFor="let operation of person.operations">
             {{ operation }}
           </li>
         </ul>
+        <br />
       </div>
-      <div *ngIf="person.assignments">
+
+      <div *ngIf="person.assignments" class="w-full text-center md:text-left">
         <div class="capitalize font-bold">Assignments</div>
-        <ul>
+        <ul class="list-disc list-inside">
           <li *ngFor="let assignment of person.assignments">
             {{ assignment }}
           </li>
         </ul>
+        <br />
       </div>
-      <br />
-      <div class="capitalize font-bold">Major Awards and Decorations</div>
-      <ul>
-        <li *ngFor="let award of person.awards">
-          {{ award }}
-        </li>
-      </ul>
-      <br />
 
-      <div *ngIf="person.achievements">
-      <div class="capitalize font-bold">Other Achievements</div>
-      <ul>
-        <li *ngFor="let achievement of person.achievements">
+      <div *ngIf="person.achievements" class="w-full text-center md:text-left">
+        <div class="capitalize font-bold">Other Achievements</div>
+        <ul class="list-disc list-inside">
+          <li *ngFor="let achievement of person.achievements">
             {{ achievement.year }} - {{ achievement.description }}
-        </li>
-      </ul>
-      <br />
+          </li>
+        </ul>
+        <br />
       </div>
 
-      <div class="capitalize font-bold">Effective Dates of Promotion</div>
-      <ul>
-        <li *ngFor="let promotion of person.promotionDates">
-          {{ promotion.rank }} - {{ promotion.date }}
-        </li>
-      </ul>
+      <div class="w-full text-center md:text-left">
+        <div class="capitalize font-bold">Major Awards and Decorations</div>
+        <ul class="list-disc list-inside">
+          <li *ngFor="let award of person.awards">
+            {{ award }}
+          </li>
+        </ul>
+        <br />
+      </div>
+
+      <div class="w-full text-center md:text-left">
+        <div class="capitalize font-bold">Effective Dates of Promotion</div>
+        <ul class="list-disc list-inside">
+          <li *ngFor="let promotion of person.promotionDates">
+            {{ promotion.rank }} - {{ promotion.date }}
+          </li>
+        </ul>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
