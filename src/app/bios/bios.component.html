@@ -1,0 +1,60 @@
+<div class="m-5 flex flex-col md:flex-row">
+  <mat-card *ngFor="let person of personData" class="w-full m-3 h-fit">
+    <mat-card-header class="flex justify-center items-center">
+      <mat-card-title>{{ person.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="flex flex-col justify-center">
+      <img
+        *ngIf="person.image"
+        [src]="person.image"
+        class="w-1/2 mx-auto mt-3 mb-4"
+      />
+
+      <p *ngFor="let line of person.bio">
+        {{ line }}
+      </p>
+
+      <div *ngIf="person.operations">
+        <div class="capitalize font-bold">Operations</div>
+        <ul>
+          <li *ngFor="let operation of person.operations">
+            {{ operation }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="person.assignments">
+        <div class="capitalize font-bold">Assignments</div>
+        <ul>
+          <li *ngFor="let assignment of person.assignments">
+            {{ assignment }}
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div class="capitalize font-bold">Major Awards and Decorations</div>
+      <ul>
+        <li *ngFor="let award of person.awards">
+          {{ award }}
+        </li>
+      </ul>
+      <br />
+
+      <div *ngIf="person.achievements">
+      <div class="capitalize font-bold">Other Achievements</div>
+      <ul>
+        <li *ngFor="let achievement of person.achievements">
+            {{ achievement.year }} - {{ achievement.description }}
+        </li>
+      </ul>
+      <br />
+      </div>
+
+      <div class="capitalize font-bold">Effective Dates of Promotion</div>
+      <ul>
+        <li *ngFor="let promotion of person.promotionDates">
+          {{ promotion.rank }} - {{ promotion.date }}
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>
