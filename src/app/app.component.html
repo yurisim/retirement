@@ -1,1 +1,28 @@
-<retirement-nx-welcome></retirement-nx-welcome> <router-outlet></router-outlet>
+<header
+  class="fixed top-0 left-0 w-full p-4 md:p-10 flex justify-between items-center"
+>
+  <button
+    mat-button
+    color="primary"
+    class="font-bold uppercase text-lg md:text-xl h-full whitespace-normal text-nowrap"
+    routerLink="/"
+  >
+    CMSgt Tracy L. Massey
+  </button>
+
+  <div class="flex justify-center items-center space-x-3 md:space-x-5">
+    <button mat-button color="primary" routerLink="/bios">
+      <mat-icon class="hidden md:inline-flex">person_book</mat-icon>
+      Bios
+    </button>
+    <button mat-button color="primary" class="text-nowrap" routerLink="/events">
+      <mat-icon class="hidden md:inline-flex">schedule</mat-icon>
+      Event Sequence
+    </button>
+    <button mat-button color="primary" routerLink="/photos">
+      <mat-icon class="hidden md:inline-flex">photo_camera</mat-icon>
+      Photos
+    </button>
+  </div>
+</header>
+<router-outlet></router-outlet>
