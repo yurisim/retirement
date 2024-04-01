@@ -9,21 +9,19 @@
       <mat-card-title class="text-nowrap">{{ person.name }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="flex flex-col justify-center items-center">
-      <img
-      [src]="person.officialImage"
-      class="inline-block w-1/2 mt-3 mb-2"
-    />
+      <img [src]="person.officialImage" class="inline-block w-1/2 mt-3 mb-2" />
       <div
         *ngIf="person.images && person.images.length > 0"
-        class="mx-auto mt-3 mb-5"
+        class="mx-auto mt-3 mb-5 text-center"
       >
         <img
           *ngFor="let image of person.images; let i = index"
           [src]="image"
-          [class]="person.images.length === 1 ? 'w-full' : 'w-1/2'"
+          [class]="person.images.length === 1 ? 'w-2/3' : 'w-1/3'"
           class="inline-block"
         />
       </div>
+
       <p *ngFor="let line of person.bio" class="w-full text-left">
         {{ line }}
       </p>
