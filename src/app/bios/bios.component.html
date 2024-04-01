@@ -1,15 +1,21 @@
-<div class="flex flex-col md:flex-row justify-center md:justify-start m-5 md:space-x-5 xl:justify-center">
-    <mat-card
-      *ngFor="let person of personData"
-      class="w-full md:w-auto h-fit my-2 md:my-0 xl:w-1/3"
-    >
+<div
+  class="flex flex-col md:flex-row justify-center md:justify-start m-5 md:space-x-5 xl:justify-center"
+>
+  <mat-card
+    *ngFor="let person of personData"
+    class="w-full md:w-auto h-fit my-2 md:my-0 xl:w-1/3"
+  >
     <mat-card-header class="flex justify-center items-center">
       <mat-card-title class="text-nowrap">{{ person.name }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="flex flex-col justify-center items-center">
+      <img
+      [src]="person.officialImage"
+      class="inline-block w-1/2 mt-3 mb-2"
+    />
       <div
         *ngIf="person.images && person.images.length > 0"
-        class="mx-auto mt-3 mb-4"
+        class="mx-auto mt-3 mb-5"
       >
         <img
           *ngFor="let image of person.images; let i = index"
@@ -31,11 +37,31 @@
         <br />
       </div>
 
+      <div *ngIf="person.education" class="w-full text-left">
+        <div class="capitalize font-bold">Education</div>
+        <ul class="list-disc list-inside">
+          <li *ngFor="let degree of person.education">
+            {{ degree }}
+          </li>
+        </ul>
+        <br />
+      </div>
+
       <div *ngIf="person.assignments" class="w-full text-left">
         <div class="capitalize font-bold">Assignments</div>
         <ul class="list-disc list-inside">
           <li *ngFor="let assignment of person.assignments">
-            {{ assignment }}
+            {{ assignment.time }} - {{ assignment.description }}
+          </li>
+        </ul>
+        <br />
+      </div>
+
+      <div class="w-full text-left">
+        <div class="capitalize font-bold">Major Awards and Decorations</div>
+        <ul class="list-disc list-inside">
+          <li *ngFor="let award of person.awards">
+            {{ award }}
           </li>
         </ul>
         <br />
@@ -52,22 +78,23 @@
       </div>
 
       <div class="w-full text-left">
-        <div class="capitalize font-bold">Major Awards and Decorations</div>
-        <ul class="list-disc list-inside">
-          <li *ngFor="let award of person.awards">
-            {{ award }}
-          </li>
-        </ul>
-        <br />
-      </div>
-
-      <div class="w-full text-left">
         <div class="capitalize font-bold">Effective Dates of Promotion</div>
         <ul class="list-disc list-inside">
           <li *ngFor="let promotion of person.promotionDates">
             {{ promotion.rank }} - {{ promotion.date }}
           </li>
         </ul>
+        <br />
+      </div>
+
+      <div *ngIf="person.flightData" class="w-full text-left">
+        <div class="capitalize font-bold">Flight Data</div>
+        <ul class="list-disc list-inside">
+          <li *ngFor="let data of person.flightData">
+            {{ data }}
+          </li>
+        </ul>
+        <br />
       </div>
     </mat-card-content>
   </mat-card>

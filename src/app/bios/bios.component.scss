@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+li {
+  @apply flex;
+}
+
+li:before {
+  content: '*';
+  margin-right: 1em;
+}
